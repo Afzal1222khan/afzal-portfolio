@@ -1,0 +1,48 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Afzal Khan Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  
+    @keyframes float {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+  </style>
+  
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <nav class="bg-gray-800 p-4 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Afzal Khan</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="hover:text-yellow-400">Home</a></li>
+        <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+        <li><a href="#skills" class="hover:text-yellow-400">Skills</a></li>
+        <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
+        <li><a href="#certificates" class="hover:text-yellow-400">Certificates</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+        <li><a href="#resume" class="hover:text-yellow-400">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="p-6">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

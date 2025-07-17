@@ -1,0 +1,311 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Home Section with Animated Earth Background -->
+<section id="home"
+    class="min-h-screen flex flex-col justify-center items-center text-center text-white bg-cover bg-center relative"
+    style="background-image: url('{{ url_for('static', filename='assets/earth-bg.gif') }}'); background-size: cover;">
+    
+    <!-- Overlay to darken background for readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col justify-center items-center">
+        <img src="{{ url_for('static', filename='assets/photo.jpeg') }}"
+            alt="Afzal Khan"
+            class="w-72 h-72 rounded-full shadow-lg object-cover border-4 border-yellow-400 animate-float transition-transform duration-700 ease-in-out hover:scale-105" />
+
+        <h1 class="text-5xl font-bold mt-6 mb-4 drop-shadow-lg"><span id="typed"></span></h1>
+        <p class="text-xl text-gray-300 mb-4">Full Stack Developer | Android & Data Enthusiast</p>
+        <p class="text-xl text-gray-300 mb-6">Let's Connect..</p>
+
+        <div class="mt-3 flex flex-wrap justify-center gap-4">
+            <a href="https://www.linkedin.com/in/afzalpathan" target="_blank"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">LinkedIn</a>
+            <a href="mailto:khanafzal2407@gmail.com"
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Gmail</a>
+            <a href="https://github.com/Afzal1222khan" target="_blank"
+                class="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded">GitHub</a>
+            <a href="/blog" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded">Blog</a>
+            <a href="{{ url_for('static', filename='resume.pdf') }}" download
+                class="bg-yellow-400 hover:bg-yellow-300 text-black px-4 py-2 rounded">Resume</a>
+        </div>
+    </div>
+</section>
+
+
+  
+ 
+  
+
+<!-- About -->
+<section id="about" class="min-h-screen bg-gray-900 px-6 py-12">
+  <h2 class="text-3xl font-bold mb-8 text-yellow-400 text-center">About Me</h2>
+  <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+    <img src="{{ url_for('static', filename='assets/photo.jpeg') }}" alt="Afzal Khan" class="w-64 h-64 rounded-full shadow-lg object-cover border-4 border-yellow-400 ">
+    
+    <div class="max-w-2xl text-gray-300">
+      <p class="text-lg mb-4">
+        I'm <span class="text-yellow-400 font-semibold">Afzal Khan</span>, a passionate Computer Science student skilled in full-stack development, data analytics, and Android app creation. I'm proficient in Python, Kotlin, Power BI, and modern web technologies.
+        I've led hands-on projects in donation tracking, interactive dashboards, and e-commerce platforms that focus on solving real-world problems.
+      </p>
+
+      <p class="mb-4">I enjoy blending backend logic with intuitive, clean frontends and meaningful design. Whether I'm working with REST APIs or making UI animations pop, I aim to create products that are functional and delightful.</p>
+
+      <!-- Tech badges -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-medium">Python</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-medium">Kotlin</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-medium">Power BI</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-medium">Flask</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-medium">Android Studio</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-medium">Java</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-medium">Tableau</span>
+      </div>
+
+      <!-- Inspirational quote -->
+      <blockquote class="italic text-gray-400 border-l-4 border-yellow-400 pl-4 mb-6">
+        “Tech isn’t just about code—it’s about people, empathy, and building tools that help make life a little better.”
+      </blockquote>
+
+      <!-- Action buttons -->
+      <div class="flex space-x-4">
+        <a href="#contact" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition">Let’s Talk</a>
+       </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Skills -->
+<section id="skills" class="bg-gray-900 px-6 py-12">
+  <h2 class="text-3xl font-bold mb-8 text-yellow-400">Skills</h2>
+
+  <!-- Programming Languages -->
+  <div class="mb-8">
+    <h3 class="text-2xl font-semibold text-white mb-4">Programming Languages</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/java.png') }}" class="h-12 mb-2" alt="Java">
+        <p class="text-white">Java</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/cpp.png') }}" class="h-12 mb-2" alt="C++">
+        <p class="text-white">C++</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/javascript.png') }}" class="h-12 mb-2" alt="JavaScript">
+        <p class="text-white">JavaScript</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/python.png') }}" class="h-12 mb-2" alt="Python">
+        <p class="text-white">Python</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/kotlin.png') }}" class="h-12 mb-2" alt="Kotlin">
+        <p class="text-white">Kotlin</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frontend Development -->
+  <div class="mb-8">
+    <h3 class="text-2xl font-semibold text-white mb-4">Frontend Development</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/htmlcss.png') }}" class="h-12 mb-2" alt="HTML/CSS">
+        <p class="text-white">HTML & CSS</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/tailwind.png') }}" class="h-12 mb-2" alt="Tailwind CSS">
+        <p class="text-white">Tailwind CSS</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/react.png') }}" class="h-12 mb-2" alt="React">
+        <p class="text-white">ReactJS</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backend / Tools -->
+  <div>
+    <h3 class="text-2xl font-semibold text-white mb-4">Backend & Tools</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/tableau.png') }}" class="h-12 mb-2" alt="Tableau">
+        <p class="text-white">Tableau</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/androidstudio.png') }}" class="h-12 mb-2" alt="Android Studio">
+        <p class="text-white">Android Studio</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/firebase.png') }}" class="h-12 mb-2" alt="Firebase">
+        <p class="text-white">Firebase</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/powerbi.png') }}" class="h-12 mb-2" alt="Power BI">
+        <p class="text-white">Power BI</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-4 flex flex-col items-center hover:bg-gray-700 transition">
+        <img src="{{ url_for('static', filename='assets/mysql.png') }}" class="h-12 mb-2" alt="MySQL">
+        <p class="text-white">MySQL</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Projects -->
+<section id="projects" class="bg-gray-900 px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6 text-yellow-400">Featured Projects</h2>
+  
+    <div class="overflow-x-auto whitespace-nowrap space-x-6 pb-4">
+      <div class="inline-block w-80 bg-gray-800 rounded-lg shadow-md p-4 align-top">
+        <img src="{{ url_for('static', filename='assets/giveback.png') }}" alt="GiveBack App" class="rounded mb-3">
+        <h3 class="text-xl font-semibold text-white">GiveBack App</h3>
+        <p class="text-gray-400 text-sm">Android donation tracking app </p>
+        <a href="https://github.com/Afzal1222khan/GiveBack-App" target="_blank" class="text-blue-400 mt-2 inline-block">Learn More →</a>
+      </div>
+  
+      <div class="inline-block w-80 bg-gray-800 rounded-lg shadow-md p-4 align-top">
+        <img src="{{ url_for('static', filename='assets/energy.png') }}" alt="Energy Dashboard" class="rounded mb-3">
+        <h3 class="text-xl font-semibold text-white">Energy Dashboard</h3>
+        <p class="text-gray-400 text-sm">Global energy trends visualized with Power BI .</p>
+        <a href="https://www.linkedin.com/posts/afzalpathan_excited-to-share-my-latestpower-bi-dashboard-activity-7319430694890258432-ywHb" target="_blank" class="text-blue-400 mt-2 inline-block">Learn More →</a>
+      </div>
+  
+      <div class="inline-block w-80 bg-gray-800 rounded-lg shadow-md p-4 align-top">
+        <img src="{{ url_for('static', filename='assets/accident.png') }}" alt="Accident Dashboard" class="rounded mb-3">
+        <h3 class="text-xl font-semibold text-white">Accident Predictor</h3>
+        <p class="text-gray-400 text-sm">ML model  for road accident severity prediction.</p>
+        <a href="https://lnkd.in/g9m24XqZ" target="_blank" class="text-blue-400 mt-2 inline-block">Learn More →</a>
+      </div>
+  
+      <div class="inline-block w-80 bg-gray-800 rounded-lg shadow-md p-4 align-top">
+        <img src="{{ url_for('static', filename='assets/ecommerce.png') }}" alt="E-Commerce Website" class="rounded mb-3">
+        <h3 class="text-xl font-semibold text-white">E-Commerce Site</h3>
+        <p class="text-gray-400 text-sm">Dynamic shopping interface using HTML, CSS, and JS.</p>
+        <a href="https://lnkd.in/dUjY7QYD" target="_blank" class="text-blue-400 mt-2 inline-block">Learn More →</a>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Certificates -->
+<section id="certificates" class="bg-gray-800 px-6 py-12">
+  <h2 class="text-3xl font-bold mb-6 text-yellow-400">Certifications</h2>
+
+  <div class="space-y-6">
+
+    <!-- Certificate 1 -->
+    <div class="bg-gray-700 rounded-lg p-6 shadow-md flex items-start space-x-4">
+      <img src="{{ url_for('static', filename='assets/ml.png') }}" alt="ML" class="w-16 h-16 rounded-lg object-cover">
+      <div>
+        <h3 class="text-xl font-semibold text-white">
+          Supervised Machine Learning
+        </h3>
+        <p class="text-gray-400 text-sm mt-1">Issued by: Coursera | <strong>Sep 2024</strong></p>
+        <p class="text-gray-400 text-sm">Credential: <a href="https://drive.google.com/file/d/1Sms_6IGui1nxKos8euDsnQm3wh_LCqC0/view?usp=share_link" class="text-blue-400 underline" target="_blank">View Certificate ↗</a></p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="bg-gray-600 text-sm px-3 py-1 rounded-full">ML</span>
+          <span class="bg-gray-600 text-sm px-3 py-1 rounded-full">Supervised Learning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 2 -->
+    <div class="bg-gray-700 rounded-lg p-6 shadow-md flex items-start space-x-4">
+      <img src="{{ url_for('static', filename='assets/iitg.png') }}" alt="IIT Guwahati" class="w-16 h-16 rounded-lg object-cover">
+      <div>
+        <h3 class="text-xl font-semibold text-white">
+          Data Science & Machine Learning
+        </h3>
+        <p class="text-gray-400 text-sm mt-1">Issued by: IIT Guwahati | <strong>Aug 2024</strong></p>
+        <p class="text-gray-400 text-sm">Credential: <a href="https://drive.google.com/file/d/10AdOffrN097vMJk0QxKd58MJUgEK7XNp/view?usp=sharing" class="text-blue-400 underline" target="_blank">View Certificate ↗</a></p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="bg-gray-600 text-sm px-3 py-1 rounded-full">Python</span>
+          <span class="bg-gray-600 text-sm px-3 py-1 rounded-full">Machine Learning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 3 -->
+    <div class="bg-gray-700 rounded-lg p-6 shadow-md flex items-start space-x-4">
+      <img src="{{ url_for('static', filename='assets/excel.png') }}" alt="Excel" class="w-16 h-16 rounded-lg object-cover">
+      <div>
+        <h3 class="text-xl font-semibold text-white">
+          Excel Skills for Business
+        </h3>
+        <p class="text-gray-400 text-sm mt-1">Issued by: Coursera | <strong>Apr 2024</strong></p>
+        <p class="text-gray-400 text-sm">Credential: <a href="https://drive.google.com/file/d/1b2ZNNiPG4e_qvwNfV6GQPUjGwcboLfwU/view?usp=sharing" class="text-blue-400 underline" target="_blank">View Certificate ↗</a></p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="bg-gray-600 text-sm px-3 py-1 rounded-full">Excel</span>
+          <span class="bg-gray-600 text-sm px-3 py-1 rounded-full">Data Analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 4 -->
+    <div class="bg-gray-700 rounded-lg p-6 shadow-md flex items-start space-x-4">
+      <img src="{{ url_for('static', filename='assets/udemy.png') }}" alt="Udemy" class="w-16 h-16 rounded-lg object-cover">
+      <div>
+        <h3 class="text-xl font-semibold text-white">
+          Mastering DSA using C & C++
+        </h3>
+        <p class="text-gray-400 text-sm mt-1">Issued by: Udemy | <strong>Dec 2023</strong></p>
+        <p class="text-gray-400 text-sm">Credential: <a href="https://drive.google.com/file/d/1u0DeQj8WiiT6H-0FZ5k121Lttaf1jvau/view?usp=sharing" class="text-blue-400 underline" target="_blank">View Certificate ↗</a></p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="bg-gray-600 text-sm px-3 py-1 rounded-full">C</span>
+          <span class="bg-gray-600 text-sm px-3 py-1 rounded-full">C++</span>
+          <span class="bg-gray-600 text-sm px-3 py-1 rounded-full">Data Structures</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Contact -->
+<section id="contact" class="bg-gray-900 px-6 py-12">
+  <h2 class="text-3xl font-bold mb-4 text-yellow-400">Contact Me</h2>
+  <form method="POST" action="/contact" class="max-w-xl mx-auto space-y-4">
+    <input name="name" placeholder="Name" class="w-full p-2 bg-gray-800 text-white rounded" />
+    <input name="email" placeholder="Email" class="w-full p-2 bg-gray-800 text-white rounded" />
+    <textarea name="message" placeholder="Your message..." rows="4" class="w-full p-2 bg-gray-800 text-white rounded"></textarea>
+    <button class="bg-yellow-400 text-black px-6 py-2 rounded">Send</button>
+  </form>
+</section>
+
+<!-- Resume -->
+<section id="resume" class="bg-gray-800 px-6 py-12 text-center">
+  <h2 class="text-3xl font-bold mb-4 text-yellow-400">Resume</h2>
+  <a href="{{ url_for('static', filename='resume.pdf') }}" download class="bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-300">
+    Download Resume
+  </a>
+</section>
+
+<script>
+new Typed("#typed", {
+  strings: ["Hi, I'm Afzal Khan!", "Full Stack Developer", "Android & Data Enthusiast", "Let’s Build Something Meaningful"],
+  typeSpeed: 60,
+  backSpeed: 40,
+  loop: true
+});
+
+</script>
+
+{% endblock %}
