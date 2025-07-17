@@ -8,7 +8,9 @@ main = Blueprint('main', __name__)
 def index():
     return render_template('index.html')
 
-
+@main.route('/blog')
+def blog():
+    return render_template('blog.html')  # ✅ This line opens blog.html
 
 @main.route('/contact', methods=['GET', 'POST'])
 def contact():
